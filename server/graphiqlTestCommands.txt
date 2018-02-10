@@ -1,0 +1,102 @@
+mutation Add{
+  addCategory(category: {name: "Kind"}) {
+    id
+    name
+  }
+}
+
+mutation AddFood{
+  addFoodItem(foodItem: {name: "Kip Natuur Kind", price: 6 }) {
+    id
+    name
+    price
+    category {
+      id
+    }
+  }
+}
+
+
+mutation removeFood {
+  removeFoodItem(id: 1) {
+    name
+  }
+}
+
+mutation updateOrder {
+  updateOrder(order: {
+    id: 1,
+    hasSoup: false
+  }) {
+    id
+    hasSoup
+    status
+  }
+}
+
+mutation addOrder {
+  addOrder(order: { 
+    name: "Alejopa", 
+    remark: "Kakaap", 
+    hasSoup: true,
+    items: [
+    {
+    	id: 3,
+    	amount: 25
+  	},
+    {
+    	id: 2,
+    	amount: 99
+  	}] 
+  }) {
+    id
+    items {
+      amount
+      item {
+        name
+        id
+        price
+      }
+    }
+  }
+}
+
+query AllInfo {
+  menu {
+    id
+    name
+    price
+    category {
+      id
+      name
+    }
+    
+  }
+  orders{
+    id
+    name
+    createdAt
+    status
+    hasSoup
+    updatedAt
+    remark
+    items{
+      amount
+      item{
+        name
+        id,
+        price
+      }
+    }
+    
+  }
+  categories{
+    name
+    id
+  }
+  drinks {
+    name
+    price
+    id
+  }
+}
