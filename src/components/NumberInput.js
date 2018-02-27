@@ -35,20 +35,20 @@ const PaddedButton = styled(Button)`
   width: 60px;
 `;
 
-const Drink = ({
+const NumberInput = ({
   amount,
   label,
   onChange,
   onIncrement,
   onDecrement,
-  stateKey
+  stateKey,
+  span
 }) => (
-  <PaddedCol span={8}>
+  <PaddedCol span={span}>
     <h4>{label}</h4>
     <div>
       <InputNumber
         type="number"
-        min={0}
         value={amount}
         name={stateKey}
         onChange={onChange}
@@ -61,4 +61,4 @@ const Drink = ({
   </PaddedCol>
 );
 
-export default Drink;
+export default NumberInput;
