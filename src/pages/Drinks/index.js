@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Row } from "antd";
 
 import Total from "./Total";
-import Drink from "./Drink";
+import NumberInput from "../../components/NumberInput";
 
 const initialState = {
   pils: {
@@ -128,7 +128,8 @@ export default class Drinks extends React.Component {
         <Total total={total} resetState={this.resetState} />
         <Row type="flex" justify="space-between">
           {stateKeys.map(key => (
-            <Drink
+            <NumberInput
+              span={8}
               key={key}
               stateKey={key}
               amount={this.state[key].amount}
