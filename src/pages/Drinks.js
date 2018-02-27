@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-import { Row } from "antd";
+import { Row, Col, Button } from "antd";
 
-import Total from "./Total";
-import NumberInput from "../../components/NumberInput";
+import Total from "../components/Total";
+import NumberInput from "../components/NumberInput";
 
 const initialState = {
   pils: {
@@ -125,6 +125,14 @@ export default class Drinks extends React.Component {
     const total = this.calculatePrice();
     return (
       <Fragment>
+        <Row>
+          <Total span={12} total={total} />
+          <Col span={6}>
+            <Button type="danger" size="large" onClick={this.resetState}>
+              Reset!
+            </Button>
+          </Col>
+        </Row>
         <Total total={total} resetState={this.resetState} />
         <Row type="flex" justify="space-between">
           {stateKeys.map(key => (
