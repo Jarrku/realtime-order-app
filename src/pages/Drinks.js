@@ -139,7 +139,7 @@ export default class Drinks extends React.Component {
             <NumberInput
               span={8}
               key={key}
-              stateKey={key}
+              name={key}
               amount={this.state[key].amount}
               label={this.state[key].label}
               onChange={this.onChange}

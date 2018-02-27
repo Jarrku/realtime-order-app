@@ -41,7 +41,7 @@ const NumberInput = ({
   onChange,
   onIncrement,
   onDecrement,
-  stateKey,
+  name,
   span
 }) => (
   <PaddedCol span={span}>
@@ -50,7 +50,7 @@ const NumberInput = ({
       <InputNumber
         type="number"
         value={amount}
-        name={stateKey}
+        name={name}
         onChange={onChange}
       />
       <Button.Group size="large">
