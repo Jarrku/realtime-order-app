@@ -92,10 +92,7 @@ export default class Drinks extends React.Component {
   };
 
   calculatePrice = () => {
-    return stateKeys.reduce(
-      (total, key) => total + this.state[key].amount * this.state[key].price,
-      0
-    );
+    return stateKeys.reduce((total, key) => total + this.state[key].amount * this.state[key].price, 0);
   };
 
   onIncrement = name => {
@@ -109,8 +106,7 @@ export default class Drinks extends React.Component {
 
   onDecrement = name => {
     this.setState(prevState => {
-      const amount =
-        prevState[name].amount > 0 ? prevState[name].amount - 1 : 0;
+      const amount = prevState[name].amount > 0 ? prevState[name].amount - 1 : 0;
 
       return {
         [name]: {
@@ -133,7 +129,6 @@ export default class Drinks extends React.Component {
             </Button>
           </Col>
         </Row>
-        <Total total={total} resetState={this.resetState} />
         <Row type="flex" justify="space-between">
           {stateKeys.map(key => (
             <NumberInput

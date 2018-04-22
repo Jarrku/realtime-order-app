@@ -3,9 +3,8 @@ import styled from "styled-components";
 import { Col, Button } from "antd";
 
 const InputNumber = styled.input`
-  font-family: "Monospaced Number", "Chinese Quote", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
   box-sizing: border-box;
   list-style: none;
   position: relative;
@@ -35,24 +34,11 @@ const PaddedButton = styled(Button)`
   width: 60px;
 `;
 
-const NumberInput = ({
-  amount,
-  label,
-  onChange,
-  onIncrement,
-  onDecrement,
-  name,
-  span
-}) => (
+const NumberInput = ({ amount, label, onChange, onIncrement, onDecrement, name, span }) => (
   <PaddedCol span={span}>
     <h4>{label}</h4>
     <div>
-      <InputNumber
-        type="number"
-        value={amount}
-        name={name}
-        onChange={onChange}
-      />
+      <InputNumber type="number" value={amount} name={name} onChange={onChange} />
       <Button.Group size="large">
         <PaddedButton type="primary" icon="plus" onClick={onIncrement} />
         <PaddedButton type="danger" icon="minus" onClick={onDecrement} />
